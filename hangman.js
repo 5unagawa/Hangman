@@ -71,7 +71,7 @@ function checkLetter(input){
   //reduce counter and change image
 	if (foundFlag == 0) {
 		--chances;
-		document.getElementById("chanceImg").src=("images/number_" + chances + ".png");
+		document.getElementById("chanceImg").src=("image/number_" + chances + ".png");
 		document.getElementById("chance").innerHTML = "Chances: " + chances;
 	
   //if player runs out of guesses
