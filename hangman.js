@@ -2,7 +2,7 @@ var targetWord; //word that the player will guess
 var blankWord;  //array to hold blank spaces
 var chances;    //counter for number of chances left
 var prevNum;    //holds value of previous question
-//var letters = /^[A-Za-z]+$/; //input verification
+var letters = /^[A-Za-z]+$/; //input verification
 
 var fruitArray = [ 
 	{val:"apple", image:"image/apple.png"},
@@ -36,7 +36,7 @@ keys.addEventListener('click', (event) => {
 	}
 	
 	//run checkLetter fucntion against key pressed
-  //hide the button and update output
+	//hide the button and update output
 	checkLetter(target.value);
 	target.style.visibility = "hidden";
 	document.getElementById("word").innerHTML = blankWord.join(' ');
@@ -59,11 +59,15 @@ function startGame(){
 	document.getElementById("word").innerHTML = "";
 	document.querySelectorAll('.btn-group button').forEach(elem=> {elem.style.visibility = "visible";});
   
-	//select a new fruit at random
-	//let input = prompt("Please enter your word:", "...");
-	//if (input.match(letters)){ //add check for symbols and numbers
-	
+	if (document.getElementById("gametypeCheck").checked == true) {
+		let input = prompt("Please enter your word:", "...");
+		if (input.match(letters)){ //add check for symbols and numbers
+			targetWord = input;
+		}
+	}
+	else {
 		chooseImage();
+	}
 		blankWord = new Array(targetWord.length);
 		for (let i=0; i < targetWord.length; i++) {
 			blankWord[i] = "_";
