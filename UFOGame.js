@@ -1,24 +1,12 @@
+import { initDictionary } from 'assets/modules/UFODictionaries.js';
 var targetWord; //word that the player will guess
 var blankWord;  //array to hold blank spaces
 var chances;    //counter for number of chances left
 var prevNum;    //holds value of previous question
 var letters = /^[A-Za-z]+$/; //input verification
 
-var fruitArray = [ 
-	{val:"apple", image:"image/apple.png"},
-	{val:"banana", image:"image/banana.png"},
-	{val:"cherry", image:"image/cherry.png"},
-	{val:"grapes", image:"image/grapes.png"},
-	{val:"kiwifruit", image:"image/kiwifruit.png"},
-	{val:"lemon", image:"image/lemon.png"},
-	{val:"mango", image:"image/mango.png"},
-	{val:"melon", image:"image/melon.png"},
-	{val:"orange", image:"image/orange.png"},
-	{val:"peach", image:"image/peach.png"},
-	{val:"pineapple", image:"image/pineapple.png"},
-	{val:"strawberry", image:"image/strawberry.png"},
-	{val:"watermelon", image:"image/watermelon.png"}
-];
+
+var dictionary = initDictionary();
  
 //disable buttons on page load
 document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
