@@ -1,4 +1,4 @@
-import { initDictionary } from '../assets/modules/UFODictionaries.js';
+//import { initDictionary } from '../assets/modules/UFODictionaries.js';
 var targetWord; //word that the player will guess
 var blankWord;  //array to hold blank spaces
 var chances;    //counter for number of chances left
@@ -6,7 +6,9 @@ var prevNum;    //holds value of previous question
 var letters = /^[A-Za-z]+$/; //input verification
 
 
-var dictionary = initDictionary();
+var fruitArray = [    "affect", "asleep", "bell", "body", "brain", "bright", "cross", "concentrate", "daytime", "energy",
+    "habit", "held", "improve", "lack", "lose", "lost", "minute", "nap", "result", "screen",
+    "sign", "sir", "tonight", "walker"];
  
 //disable buttons on page load
 document.querySelectorAll('.btn-group button').forEach(elem=> {elem.disabled = true;});
